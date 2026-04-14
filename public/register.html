@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>註冊 - 個人生活記事本</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        .container { max-width: 400px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h2 { text-align: center; }
+        input, select, textarea, button { width: 100%; box-sizing: border-box; padding: 10px; margin: 8px 0; }
+        button { background: #2196F3; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1976D2; }
+        .link { text-align: right; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>註冊</h2>
+        <form action="register_process.php" method="post">
+            <input type="text" name="account" placeholder="帳號" required>
+            <input type="text" name="nickname" placeholder="暱稱" required>
+            <input type="password" name="password" placeholder="密碼" required>
+            <select name="gender" required>
+                <option value="">請選擇性別</option>
+                <option value="male">男</option>
+                <option value="female">女</option>
+                <option value="other">其他</option>
+            </select>
+            <textarea name="interest" placeholder="興趣" rows="3"></textarea>
+            <button type="submit">註冊</button>
+        </form>
+        <div class="link">
+            <a href="login.php">已有帳號？登入</a>
+        </div>
+    </div>
+</body>
+</html>
