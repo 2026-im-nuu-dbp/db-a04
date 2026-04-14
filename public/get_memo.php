@@ -1,11 +1,11 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['user_id'])) {
     echo json_encode(['error' => '未登入']);
     exit();
 }
-$username = $_SESSION['username'];
+$user_id = $_SESSION['user_id'];
 
 // 資料庫連線參數
 $host = 'localhost';
@@ -21,8 +21,8 @@ $options = [
 ];
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
-    $stmt = $pdo->prepare('SELECT id, title, content, created_at FROM dbmemo WHERE username = ? ORDER BY created_at DESC');
-    $stmt->execute([$username]);
+    $stmt = $pdo->prepare('SELECT id, title, content, created_at FROM dbmemo WHERE user_id = ? ORDER BY created_at DESC');
+    $stmt->execute([$user_id]);
     $memos = $stmt->fetchAll();
     echo json_encode($memos);
 } catch (Exception $e) {

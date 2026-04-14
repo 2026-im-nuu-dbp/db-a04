@@ -44,9 +44,12 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     }
 }
 
-$sql = "INSERT INTO dbmemo (memo_id, user_id, title, content, image_path) VALUES (?, ?, ?, ?)";
+//$sql = "INSERT INTO dbmemo (memo_id, user_id, title, content, image_path) VALUES (?, ?, ?, ?, ?)";
+$sql = "INSERT INTO dbmemo (user_id, title, content, image_path) VALUES (?, ?, ?, ?)";
+
 $stmt = $pdo->prepare($sql);
-$stmt->execute([$memo_id, $user_id, $title, $content, $image_path]);
+//$stmt->execute([$memo_id, $user_id, $title, $content, $image_path]);
+$stmt->execute([$user_id, $title, $content, $image_path]);
 
 header('Location: home.html'); // 新增成功後導回首頁
 exit;
