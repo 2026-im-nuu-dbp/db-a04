@@ -16,8 +16,8 @@
 <body>
     <div class="container">
         <h2>註冊</h2>
-        <form action="register_process.php" method="post">
-            <input type="text" name="account" placeholder="帳號" required>
+        <form action="register.php" method="post">
+            <input type="text" name="username" placeholder="帳號" required>
             <input type="text" name="nickname" placeholder="暱稱" required>
             <input type="password" name="password" placeholder="密碼" required>
             <select name="gender" required>
@@ -26,7 +26,7 @@
                 <option value="female">女</option>
                 <option value="other">其他</option>
             </select>
-            <textarea name="interest" placeholder="興趣" rows="3"></textarea>
+            <textarea name="interest" placeholder="興趣" rows="3" required></textarea>
             <button type="submit">註冊</button>
         </form>
         <div class="link">
