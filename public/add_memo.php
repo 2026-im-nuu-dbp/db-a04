@@ -49,5 +49,5 @@ $sql = "INSERT INTO dbmemo (memo_id, username, title, content, image_path, creat
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$memo_id, $username, $title, $content, $image_path, date('Y-m-d H:i:s')]);
 
-header('Location: home.php'); // 新增成功後導回首頁
+header('Location: home.html'); // 新增成功後導回首頁
 exit;

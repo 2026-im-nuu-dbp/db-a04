@@ -24,6 +24,17 @@ try {
     $action = $_POST['action'] ?? '';
     $id = intval($_POST['id'] ?? 0);
     if ($action === 'delete' && $id) {
+        // 先查出 image_path
+        $stmt = $pdo->prepare('SELECT image_path FROM dbmemo WHERE memo_id = ? AND username = ?');
+        $stmt->execute([$id, $username]);
+        $row = $stmt->fetch();
+        if ($row && !empty($row['image_path'])) {
+            $img = $row['image_path'];
+            if (file_exists($img)) {
+                @unlink($img);
+            }
+        }
+        // 再刪除資料
         $stmt = $pdo->prepare('DELETE FROM dbmemo WHERE memo_id = ? AND username = ?');
         $stmt->execute([$id, $username]);
         echo json_encode(['success' => true]);
