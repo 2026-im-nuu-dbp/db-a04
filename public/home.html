@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>個人主頁</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        .container { max-width: 400px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h2 { text-align: center; }
+        input, select, textarea, button { width: 100%; box-sizing: border-box; padding: 10px; margin: 8px 0; }
+        button { background: #4CAF50; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #388E3C; }
+        .link { text-align: right; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; margin-top: 40px;">你好，[暱稱]！</h1>
+    </header>
+    <div class="container">
+        <!-- 這裡會從dbmemo讀取資料，做成捲動的記事列表 -->
+        <button onclick="location.href='add_memo.html'">新增圖文記事</button>
+    </div>
+</body>
+</html>
