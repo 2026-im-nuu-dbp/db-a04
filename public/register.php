@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 
 $sql = "INSERT INTO users (username, nickname, password, gender, interest) VALUES ('$usrename', '$nickname', '$password', '$gender', '$interest')";
 if ($conn->query($sql) === TRUE) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

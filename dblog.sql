@@ -4,5 +4,4 @@ CREATE TABLE dblog (
 	username VARCHAR(50) NOT NULL,
 	login_time DATETIME NOT NULL,
 	success TINYINT(1) NOT NULL,
-	message VARCHAR(255)
 );
