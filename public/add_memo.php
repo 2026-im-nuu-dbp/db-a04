@@ -21,10 +21,10 @@ try {
 }
 
 // 假設登入後 user_id 存在 session
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['username'])) {
     die('請先登入');
 }
-$user_id = $_SESSION['user_id'];
+$username = $_SESSION['username'];
 
 $title = $_POST['title'] ?? '';
 $content = $_POST['content'] ?? '';
@@ -44,12 +44,10 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     }
 }
 
-//$sql = "INSERT INTO dbmemo (memo_id, user_id, title, content, image_path) VALUES (?, ?, ?, ?, ?)";
-$sql = "INSERT INTO dbmemo (user_id, title, content, image_path) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO dbmemo (memo_id, username, title, content, image_path, created_at) VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = $pdo->prepare($sql);
-//$stmt->execute([$memo_id, $user_id, $title, $content, $image_path]);
-$stmt->execute([$user_id, $title, $content, $image_path]);
+$stmt->execute([$memo_id, $username, $title, $content, $image_path, date('Y-m-d H:i:s')]);
 
-header('Location: home.html'); // 新增成功後導回首頁
+header('Location: home.php'); // 新增成功後導回首頁
 exit;

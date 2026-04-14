@@ -24,6 +24,11 @@ $msg = '';
 if ($user && $user['password'] === $password) {
 	$_SESSION['username'] = $account;
 	$_SESSION['user_id'] = $user['id'];
+	// 驗證 session 寫入
+	// if (!isset($_SESSION['user_id']) || !$_SESSION['user_id']) {
+	// 	echo "<script>alert('登入失敗，請重新登入');location.href='login.html';</script>";
+	// 	exit();
+	// }
 	$success = 1;
 	$msg = '登入成功';
 	echo "<script>alert('登入成功');location.href='home.php';</script>";
