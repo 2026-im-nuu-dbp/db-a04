@@ -20,8 +20,10 @@ if ($conn->connect_error) {
 
 $sql = "INSERT INTO users (username, nickname, password, gender, interest) VALUES ('$usrename', '$nickname', '$password', '$gender', '$interest')";
 if ($conn->query($sql) === TRUE) {
-    echo "註冊成功！";
+    header("Location: login.html");
+    exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 $conn->close();
+?>

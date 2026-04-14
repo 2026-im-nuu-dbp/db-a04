@@ -2,9 +2,9 @@
 session_start();
 // 請根據你的資料庫設定修改下方資訊
 $host = 'localhost';
-$db   = 'dbmemo.sql';
-$user = '你的帳號';
-$pass = '你的密碼';
+$db   = 'db-a04';
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
