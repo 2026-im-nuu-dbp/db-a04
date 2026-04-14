@@ -1,5 +1,4 @@
 // Create a new table called "dbusers"
-
 CREATE TABLE users (
     username VARCHAR(50) PRIMARY KEY,
     nickname VARCHAR(100) NOT NULL,
