@@ -18,9 +18,9 @@ if ($conn->connect_error) {
     echo "Connection successful!";
 }
 
-$sql = "INSERT INTO users (username, nickname, password, gender, interest) VALUES ('$usrename', '$nickname', '$password', '$gender', '$interest')";
+$sql = "INSERT INTO dbusers (username, nickname, password, gender, interest) VALUES ('$usrename', '$nickname', '$password', '$gender', '$interest')";
 if ($conn->query($sql) === TRUE) {
-    header("Location: login.php");
+    header("Location: login.html");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
