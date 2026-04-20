@@ -1,1 +1,8 @@
-// create a new table called "dbmemo"
+CREATE TABLE dbmemo (
+	memo_id INT AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(50) NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	content TEXT NOT NULL,
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	image_path VARCHAR(255)
+);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>來新增一個圖文記事吧！</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        .container { max-width: 400px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h2 { text-align: center; }
+        input, select, textarea, button { width: 100%; box-sizing: border-box; padding: 10px; margin: 8px 0; }
+        button { background: #2196F3; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1976D2; }
+        .link { text-align: right; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; margin-top: 40px;">個人生活記事本</h1>
+    </header>
+
+    <div class="container">
+        <h2>新增圖文記事</h2>
+        <form action="add_memo.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="標題" required>
+            <input type="file" name="image" accept="image/*">
+            <span style="font-size: 10px; color: #666;">(支援的格式：jpeg、jpg、png、gif、webp、bmp)</span>
+            <textarea name="content" placeholder="寫些什麼吧！" rows="5" required></textarea>
+            <button type="submit">新增記事</button>
+        </form>
+    </div>
+</body>
+</html>

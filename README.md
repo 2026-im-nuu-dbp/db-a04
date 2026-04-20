@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/VOLNfwbe)
 # 作業 5 資料庫基礎存取
 
 ## 繳交說明
@@ -28,3 +29,5 @@
 7. 登入資料可以被瀏覽
 
 ## 自行設計的內容說明(同學自填)
+題目：個人生活記事本
+提供使用者註冊、登入、管理個人圖文備忘（可新增、刪除、修改、瀏覽），並記錄登入歷程，方便生活記事與回顧。
